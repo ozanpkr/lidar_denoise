@@ -1,27 +1,97 @@
-# Removal of Adverse Weather Noise from LiDAR Point Clouds for Autonomous Driving
+---
 
-## Overview
+# 🛰️ LiDAR Point Cloud Denoising
 
-With the rapid development of autonomous vehicle technology, the use of such systems in everyday life has been increasing. As a result, the challenges faced by vehicles in real-world conditions also present significant obstacles for these technologies. One of the most critical challenges is adverse weather conditions.
+### *Enhancing Spatial Perception through Deep Learning*
 
-Just as poor weather conditions affect human vision, they similarly impair the vision of sensors, such as LiDAR, used in autonomous vehicles. To address this, the current study proposes an autoencoder-based solution aimed at mitigating the effects of adverse weather on LiDAR point clouds.
+---
 
-## Problem Statement
+## 📌 Project Overview
 
-Adverse weather conditions, such as fog, rain, or snow, can introduce noise into LiDAR point clouds, leading to reduced accuracy in object detection and navigation. This is a significant challenge for autonomous driving systems, which rely on precise sensor data to function safely and effectively.
+LiDAR sensors are the "eyes" of autonomous systems, yet they are highly susceptible to environmental noise (rain, dust, fog) and sensor artifacts. This repository provides a **Deep Learning-based denoising pipeline** designed to filter out 3D noise while preserving critical geometric structures.
 
-## Proposed Solution
+---
 
-This project focuses on the development of an autoencoder-based model to remove noise from LiDAR point clouds caused by adverse weather. The proposed solution aims to improve the quality of LiDAR data, thereby enhancing the performance and safety of autonomous driving systems in challenging weather conditions.
+## 🚀 Key Features
 
-### Key Features:
+| Feature | Description |
+| --- | --- |
+| **Outlier Removal** | Advanced filtering of scattered noise points in 3D space. |
+| **Geometry Preservation** | Keeps edges and surfaces sharp while removing artifacts. |
+| **Neural Network Integration** | Leverages modern architectures optimized for point cloud data. |
+| **Visual Analytics** | Built-in tools for comparing "Noisy" vs. "Clean" results. |
 
-- **LiDAR Point Cloud Noise Removal**: The main objective is to reduce noise in the LiDAR data caused by poor weather conditions.
-- **Autoencoder-Based Approach**: An autoencoder network is utilized to filter out the unwanted noise and improve the quality of point cloud data.
-- **Improved Sensor Accuracy**: By cleaning the LiDAR data, the system can provide more accurate readings, ensuring better decision-making for autonomous vehicles.
+---
 
-## Benefits
+## 🧬 Technical Workflow
 
-- **Improved Performance in Adverse Weather**: The proposed solution enhances the ability of autonomous vehicles to navigate in challenging weather conditions.
-- **Reduced Sensor Errors**: By removing noise, the system reduces the risk of incorrect readings from LiDAR sensors.
-- **Real-Time Processing**: The method is designed to be efficient, enabling real-time processing for autonomous vehicles.
+1. **Preprocessing:** Normalization and voxelization of raw `.pcd` or `.bin` files.
+2. **Feature Extraction:** Capturing spatial relationships using deep neural layers.
+3. **Refinement:** Iterative coordinate correction to output high-fidelity point clouds.
+
+> [!TIP]
+> **Performance Tip:** For large-scale point clouds, ensure you have a CUDA-enabled GPU to speed up the inference process within the notebook.
+
+---
+
+## 📁 Repository Structure
+
+```bash
+├── lidar_denoise.ipynb   # 🧠 Core implementation & Training logic
+├── data/                 # 📁 Placeholder for LiDAR datasets
+├── utils/                # 🛠️ Visualization and math utilities
+└── requirements.txt      # 📦 Essential Python libraries
+
+```
+
+---
+
+## 🛠️ Getting Started
+
+### 1. Installation
+
+Clone the repo and install the environment:
+
+```bash
+git clone https://github.com/ozanpkr/lidar_denoise.git
+cd lidar_denoise
+pip install -r requirements.txt
+
+```
+
+### 2. Run the Notebook
+
+Launch the main pipeline:
+
+```bash
+jupyter notebook lidar_denoise.ipynb
+
+```
+
+---
+
+## 📊 Visual Results (Example)
+
+| Raw Point Cloud (Noisy) | Denoised Point Cloud (Clean) |
+| --- | --- |
+|  |  |
+| *Scattered noise and artifacts* | *Clearer object boundaries* |
+
+---
+
+## 👤 Author
+
+**Ozan Peker**
+
+* **GitHub:** [@ozanpkr](https://github.com/ozanpkr)
+* **LinkedIn:** [in/ozanpeker](https://www.google.com/search?q=https://linkedin.com/in/ozanpeker)
+
+---
+
+## 📜 License
+
+This project is licensed under the **Apache License 2.0**.
+
+---
+
+**Would you like me to generate a custom header image or a diagram for this README?**
